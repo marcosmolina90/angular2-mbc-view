@@ -1,0 +1,31 @@
+<table class="bordered striped highlight responsive-table">
+  <thead>
+    <tr style="font-weight: bold;">
+      <td *ngFor="let c of collumns" >
+        {{c.title}}
+      </td>
+      <td>
+        <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reg of registros">
+      <td *ngFor="let c of collumns" >
+        {{reg[c.collumn]}}
+      </td>
+      <td>
+        <a class="btn-floating waves-effect waves-light blue" (click)="select(reg.id)"><i class="material-icons">edit</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div style="text-align: center">
+  <ul class="pagination">
+    <li [class.disabled]="pagSelect<=1" [class.waves-effect]="pagSelect > 1" ><a (click)="selectPagina(pagSelect-1)"><i class="material-icons">chevron_left</i></a></li>
+    <li [class.waves-effect]="pag!=pagSelect" [class.active]="pag==pagSelect" *ngFor="let pag of paginas">
+      <a (click)="go(pag)">{{pag}}</a>
+    </li>
+    <li [class.disabled]="pagSelect <= totPag" [class.waves-effect]="pagSelect < totPag"><a (click)="selectPagina(pagSelect+1)"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+</div>

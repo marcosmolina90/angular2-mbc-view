@@ -1,0 +1,38 @@
+<nav [style.visibility]="!mostrarMenu ? 'hidden' : ''">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo right">{{mostrarMenu}}</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li routerLinkActive="active">
+        <a routerLink="/">Home</a></li>
+      <li>
+        <a class="dropdown-button" data-activates="dropdown1">
+          Cadastros
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+  <ul id="dropdown1" class="dropdown-content" style="width: 200px">
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'item']">Item</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'grupoItem']">Grupo Item</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'subGrupoItem']">Sub Grupo Item</a></li>
+    <li class="divider"></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'clifor']">Cliente/ Fornecedor</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'empresa']">Empresa</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'contaGerencial']">Conta Gerencial</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'moeda']">Moeda</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'motivoBloqueio']">Motivo Bloqueio</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'motivoCancelamento']">Motivo Cancelamento</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'tpCalculo']">Tipo de Cálculo </a></li>
+    <li class="divider"></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'municipio']">Municipio</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'estado']">Estado</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['/list', 'pais']">Pais</a></li>
+
+
+
+  </ul>
+</nav>

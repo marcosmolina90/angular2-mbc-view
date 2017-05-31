@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col s6">
+    <label>Código IBGE</label>
+    <input placeholder="Código IBGE" id="codigo" [(ngModel)]="estado.codigo" type="text">
+  </div>
+  <div class="col s6">
+    <label>Código IBGE</label>
+    <input placeholder="Estado" id="estado" [(ngModel)]="estado.estado" type="text">
+  </div>
+  <div class="col s6">
+    <label>Código IBGE</label>
+    <input placeholder="Sigla" id="sigla" [(ngModel)]="estado.sigla" type="text">
+  </div>
+  <div class="col s6">
+    <label>Pais</label>
+    <select class="browser-default"  [(ngModel)]="estado.idPais" >
+      <option value="" disabled >Selecione o estado</option>
+      <option *ngFor="let p of paises" [ngValue]="p.id" >
+        {{p.descricao}}
+      </option>
+    </select>
+  </div>
+</div>
+<footer class="page-footer">
+  <div class="container" style="text-align: right">
+    <a class="waves-effect waves-light btn" (click)="salvar()"><i class="material-icons left">done</i>Salvar</a>
+    <a class="waves-effect waves-light btn" [routerLink]="['/list', entidade]"><i class="material-icons left">skip_previous</i>Voltar</a>
+    <br />
+    <br />
+  </div>
+</footer>

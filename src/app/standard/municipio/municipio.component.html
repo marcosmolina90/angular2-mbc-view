@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col s6">
+    <label>Código IBGE</label>
+    <input placeholder="Código IBGE" id="codigo" [(ngModel)]="municipio.codigo" type="text">
+  </div>
+  <div class="col s6">
+    <label>Muncipio</label>
+    <input id="last_name" type="text" [(ngModel)]="municipio.descricao">
+  </div>
+  <div class=" col s12">
+    <label>Estado</label>
+    <select class="browser-default" [(ngModel)]="municipio.sgEstado">
+      <option value="" disabled selected>Selecione o estado</option>
+      <option *ngFor="let item of estados" [ngValue]="item.sigla">
+        {{item.sigla}} - {{item.estado}}
+      </option>
+    </select>
+  </div>
+  <div class="col s6">
+    <label for="latitude">Latitude</label>
+    <input placeholder="Latitude" id="latitude" [(ngModel)]="municipio.latitude" type="text" class="validate">
+  </div>
+  <div class="col s6">
+    <label for="longitude">Longitude</label>
+    <input id="longitude" placeholder="Longitude" type="text" [(ngModel)]="municipio.longitude" class="validate">
+  </div>
+</div>
+<footer class="page-footer">
+  <div class="container" style="text-align: right">
+    <a class="waves-effect waves-light btn" (click)="salvar()"><i class="material-icons left">done</i>Salvar</a>
+    <a class="waves-effect waves-light btn" [routerLink]="['/list', entidade]"><i class="material-icons left">skip_previous</i>Voltar</a>
+    <br />
+    <br />
+  </div>
+</footer>
